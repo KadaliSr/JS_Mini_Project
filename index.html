@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MealMate</title>
+  <style>
+    body {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    nav {
+      background-color: #d62884;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .title {
+      color:black;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .meal {
+      display: flex;
+      align-items: center;
+    }
+    .biryani{
+       width:100%;
+       display: flex; 
+       flex-wrap: wrap;
+       gap:10px;
+    }
+    .card {
+      display:flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content:space-between;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+      width: 200px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .imgb {
+      width:200px;
+      height:200px;
+      border-radius: 10px;
+    }
+
+    .sameline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px 0;
+    }
+
+    .starbutton {
+      background-color: green;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    .addbutton {
+      background-color: #d62884;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+    }
+
+    #order-table {
+      display:none ;
+      width: 90%;
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+
+    #order-table th, #order-table td {
+      border: 1px solid black;
+      padding: 10px;
+      text-align: center;
+    }
+     #cart-count {
+      background-color: white;
+      color: black;
+      border-radius: 50%; 
+      padding: 5px 10px;
+      margin-left:2px;
+    } 
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="title">MealMate</div>
+    <div class="meal">
+      <img class="imgmeal" src="meal.png" style="cursor: pointer;" width="40">
+      <span id="cart-count" style="display:none;width:10px">0</span>
+    </div>
+  </nav>
+  <section class="container">
+        <h1>Starter's</h1>
+    <div class="biryani">
+      <div class="card">
+        <img class="imgb" src="s1.webp"/>
+        <div class="sameline">
+            <span class="itemname">Chicken tikka </span>
+            <button class="starbutton">4.0&#9733;</button>
+        </div>
+        <div class="itemprice">Rupees: <span class="price">250</span></div>
+       <button class="addbutton">Add to meal</button>
+    </div>
+        <div class="card">
+            <img class="imgb" src="s.2.jpg" />
+             <div class="sameline">
+                <span class="itemname">Cheese Balls</span>
+                 <button class="starbutton">3.5&#9733;</button>
+             </div>
+            <div class="quantity" style="display:none">0</div>
+            <div class="itemprice">Rupees: <span class="price">250</span></div>
+           <button class="addbutton">Add to meal</button>
+        </div>
+        <div class="card">
+          <img class="imgb" src="s.3.jpg" />
+          <div class="sameline">
+              <span class="itemname">Veg Tondoori</span>
+              <button class="starbutton">4.0&#9733;</button>
+          </div>
+          <div class="itemprice">Rupees: <span class="price">200</span></div>
+         <button class="addbutton">Add to meal</button>
+      </div>
+      <div class="card">
+          <img class="imgb" src="s4.webp" />
+          <div class="sameline">
+              <span class="itemname">Chilli Chicken</span>
+              <button class="starbutton">4.0&#9733;</button>
+          </div>
+          <div class="itemprice">Rupees: <span class="price">250</span></div>
+         <button class="addbutton">Add to meal</button>
+      </div>
+    <div class="card">
+      <img class="imgb" src="s5.jfif" />
+      <div class="sameline">
+          <span class="itemname">Crispy Corn </span>
+          <button class="starbutton">5.0&#9733;</button>
+      </div>
+      <div class="itemprice">Rupees: <span class="price">150</span></div>
+     <button class="addbutton">Add to meal</button>
+  </div>
+  </div>
+      <h1>Combo Meals</h1>
+    <div class="biryani">
+      <div class="card">
+        <img class="imgb" src="m1.jpg"/>
+        <div class="sameline">
+            <span class="itemname">Cheese Tomato, Kadhi, Aloo Gobhi with Raita, Jeera Rice & Butter Roti
+</span>
+            <button class="starbutton">5.0&#9733;</button>
+        </div>
+        <div class="itemprice">Rupees: <span class="price">250</span></div>
+       <button class="addbutton">Add to meal</button>
+    </div>
+        <div class="card">
+            <img class="imgb" src="m2.jpg" />
+             <div class="sameline">
+                <span class="itemname">Shahi Paneer, Mix Veg,  Dal Makhani with Butter Naan/ Stuffed Naan</span>
+                 <button class="starbutton">3.5&#9733;</button>
+             </div>
+            <div class="quantity" style="display:none">0</div>
+            <div class="itemprice">Rupees: <span class="price">150</span></div>
+           <button class="addbutton">Add to meal</button>
+        </div>
+        <div class="card">
+          <img class="imgb" src="m3.png" />
+          <div class="sameline">
+              <span class="itemname">3. Chicken Rara + Jeera Rice & Butter Naan
+</span>
+              <button class="starbutton">4.0&#9733;</button>
+          </div>
+          <div class="itemprice">Rupees: <span class="price">200</span></div>
+         <button class="addbutton">Add to meal</button>
+      </div>
+      <div class="card">
+          <img class="imgb" src="m4.png" />
+          <div class="sameline">
+              <span class="itemname">Methi Malai Paneer, Aloo Jeera, Rajma with Rice & Butter Naan/Roti
+</span>
+              <button class="starbutton">4.5&#9733;</button>
+          </div>
+          <div class="itemprice">Rupees: <span class="price">250</span></div>
+         <button class="addbutton">Add to meal</button>
+      </div>
+    <div class="card">
+      <img class="imgb" src="m5.png" />
+      <div class="sameline">
+          <span class="itemname">Egg Curry, Kadhai Chicken with Stuffed Naan/ Chapati</span>
+          <button class="starbutton">5.0&#9733;</button>
+      </div>
+      <div class="itemprice">Rupees: <span class="price">150</span></div>
+     <button class="addbutton">Add to meal</button>
+  </div>
+  </div>
+
+    <h1>Briyani's</h1>
+    <div class="biryani">
+      <div class="card">
+        <img class="imgb" src="br.5.jpeg"/>
+        <div class="sameline">
+            <span class="itemname"> Chicken Tandoori Leg Piece Biryani</span>
+            <button class="starbutton">4.0&#9733;</button>
+        </div>
+        <div class="itemprice">Rupees: <span class="price">250</span></div>
+       <button class="addbutton">Add to meal</button>
+    </div>
+        <div class="card">
+            <img class="imgb" src="br.1.jpg" />
+             <div class="sameline">
+                <span class="itemname">Chicken Biryani</span>
+                 <button class="starbutton">3.5&#9733;</button>
+             </div>
+            <div class="quantity" style="display:none">0</div>
+            <div class="itemprice">Rupees: <span class="price">150</span></div>
+           <button class="addbutton">Add to meal</button>
+        </div>
+        <div class="card">
+          <img class="imgb" src="br.3.jpeg" />
+          <div class="sameline">
+              <span class="itemname">Fried Chicken Biryani</span>
+              <button class="starbutton">4.0&#9733;</button>
+          </div>
+          <div class="itemprice">Rupees: <span class="price">200</span></div>
+         <button class="addbutton">Add to meal</button>
+      </div>
+      <div class="card">
+          <img class="imgb" src="br.2.jpg" />
+          <div class="sameline">
+              <span class="itemname">Mutton Biryani</span>
+              <button class="starbutton">4.0&#9733;</button>
+          </div>
+          <div class="itemprice">Rupees: <span class="price">250</span></div>
+         <button class="addbutton">Add to meal</button>
+      </div>
+    <div class="card">
+      <img class="imgb" src="br.4.jpeg" />
+      <div class="sameline">
+          <span class="itemname">Paneer Biryani</span>
+          <button class="starbutton">4.0&#9733;</button>
+      </div>
+      <div class="itemprice">Rupees: <span class="price">150</span></div>
+     <button class="addbutton">Add to meal</button>
+  </div>
+  </div>
+      <h1>Curry's</h1>
+    <div class="biryani">
+      <div class="card">
+        <img class="imgb" src="c1.jpeg"/>
+        <div class="sameline">
+            <span class="itemname">Crap Curry</span>
+            <button class="starbutton">4.0&#9733;</button>
+        </div>
+        <div class="itemprice">Rupees: <span class="price">250</span></div>
+       <button class="addbutton">Add to meal</button>
+    </div>
+        <div class="card">
+            <img class="imgb" src="c4.jfif" />
+             <div class="sameline">
+                <span class="itemname">Melt-in-the-Mouth Burnt Aubergine and Spinach Curry
+</span>
+                 <button class="starbutton">4.5&#9733;</button>
+             </div>
+            <div class="quantity" style="display:none">0</div>
+            <div class="itemprice">Rupees: <span class="price">80</span></div>
+           <button class="addbutton">Add to meal</button>
+        </div>
+        <div class="card">
+          <img class="imgb" src="c5.jpeg" />
+          <div class="sameline">
+              <span class="itemname">Mix Veg With Paneer</span>
+              <button class="starbutton">5.0&#9733;</button>
+          </div>
+          <div class="itemprice">Rupees: <span class="price">100</span></div>
+         <button class="addbutton">Add to meal</button>
+      </div>
+      <div class="card">
+          <img class="imgb" src="c3.jpeg" />
+          <div class="sameline">
+              <span class="itemname">prawn curry</span>
+              <button class="starbutton">4.0&#9733;</button>
+          </div>
+          <div class="itemprice">Rupees: <span class="price">250</span></div>
+         <button class="addbutton">Add to meal</button>
+      </div>
+    <div class="card">
+      <img class="imgb" src="c2.jpeg" />
+      <div class="sameline">
+          <span class="itemname">Fish Fry</span>
+          <button class="starbutton">5.0&#9733;</button>
+      </div>
+      <div class="itemprice">Rupees: <span class="price">150</span></div>
+     <button class="addbutton">Add to meal</button>
+  </div>
+  </div>
+      <h1>Dessert's</h1>
+    <div class="biryani">
+      <div class="card">
+        <img class="imgb" src="d.1.avif"/>
+        <div class="sameline">
+            <span class="itemname">Chocolate Ice Cream</span>
+            <button class="starbutton">5.0&#9733;</button>
+        </div>
+        <div class="itemprice">Rupees: <span class="price">100</span></div>
+       <button class="addbutton">Add to meal</button>
+    </div>
+        <div class="card">
+            <img class="imgb" src="d.2.avif" />
+             <div class="sameline">
+                <span class="itemname">Kemma</span>
+                 <button class="starbutton">5.0&#9733;</button>
+             </div>
+            <div class="quantity" style="display:none">0</div>
+            <div class="itemprice">Rupees: <span class="price">249</span></div>
+           <button class="addbutton">Add to meal</button>
+        </div>
+        <div class="card">
+          <img class="imgb" src="d.3.avif" />
+          <div class="sameline">
+              <span class="itemname">Gulab jamun</span>
+              <button class="starbutton">5.0&#9733;</button>
+          </div>
+          <div class="itemprice">Rupees: <span class="price">150</span></div>
+         <button class="addbutton">Add to meal</button>
+      </div>
+      <div class="card">
+          <img class="imgb" src="d.4.avif" />
+          <div class="sameline">
+              <span class="itemname">Cafe Chocos</span>
+              <button class="starbutton">5.0&#9733;</button>
+          </div>
+          <div class="itemprice">Rupees: <span class="price">300</span></div>
+         <button class="addbutton">Add to meal</button>
+      </div>
+    <div class="card">
+      <img class="imgb" src="d.5.avif" />
+      <div class="sameline">
+          <span class="itemname">Greek Loukoumades</span>
+          <button class="starbutton">5.0&#9733;</button>
+      </div>
+      <div class="itemprice">Rupees: <span class="price">200</span></div>
+     <button class="addbutton">Add to meal</button>
+  </div>
+  </div>
+
+  </section>
+  <footer>
+    <table id="order-table"></table><br>
+    <div class="add" style="display:none ;"><strong>Note:If you want to Add Anything Else plz Click on Add to Meal and update the cart</strong></div>
+  </footer>
+</body>
+<script>
+  let count = 0
+  let a = []
+  const cartCount = document.getElementById("cart-count")
+  const table = document.getElementById("order-table")
+  const cards = document.querySelectorAll(".card")
+  
+  cards.forEach(card => {
+    const addBtn = card.querySelector(".addbutton")
+    const itemName = card.querySelector(".itemname")
+    const price = card.querySelector(".price")
+  
+    addBtn.addEventListener("click", function () {
+      const itemNameE1 = itemName.innerText
+      const itemPrice = parseInt(price.innerText)
+  
+      const existingItem = a.find(item=>item.name == itemNameE1)
+      if (existingItem) {
+        existingItem.quantity += 1
+        existingItem.price += itemPrice
+      } else {
+        a.push({
+          name: itemNameE1,
+          quantity: 1,
+          unitPrice: itemPrice,
+          price: itemPrice
+        })
+      }
+  
+      count += 1;
+      cartCount.style.display = "inline-block"
+      cartCount.innerText = count
+    })
+  })
+  
+  document.querySelector(".imgmeal").addEventListener("click", () => {
+    table.style.display = "table"
+    document.querySelector(".add").style.display="block"
+    disp()
+  })
+  
+  function disp() {
+  if (a.length>0){
+    let totalSum = 0
+    let s = `<tr>
+      <th>S.No</th>
+      <th>Food Item</th>
+      <th>Quantity</th>
+      <th>Edit</th>
+      <th>Remove</th>
+     <th>Total Price</th>
+
+    </tr>`
+  a.forEach((item, index) => {
+      s += `<tr>
+        <td>${index + 1}</td>
+        <td>${item.name}</td>
+        <td>
+          <input type="number" min="1" value="${item.quantity}" 
+                 style="width:60px; text-align:center;">
+        </td>
+        <td><button onclick="updateQuantity(${index}, document.querySelectorAll('input')[${index}].value)">Update</button></td>
+        <td><button onclick="removeItem(${index})">Remove</button></td>
+        <td>${item.price}</td>
+      </tr>`
+      totalSum += item.price
+
+    });
+  
+    s += `<tr>
+      <td colspan="5"><strong>Total</strong></td>
+      <td ><strong>${totalSum}</strong></td>
+    </tr>`
+  
+    table.innerHTML = s
+
+  }
+}
+  function updateQuantity(index, newQty) {
+    newQty = parseInt(newQty);
+    if (!isNaN(newQty) && newQty > 0) {
+      a[index].quantity = newQty
+      a[index].price = newQty * a[index].unitPrice
+      disp()
+    }
+  }
+function removeItem(index) {
+    count -= a[index].quantity
+    a.splice(index, 1);
+    cartCount.innerText = count
+    if (count === 0)
+    {
+    cartCount.style.display = "none"
+    table.style.display = "none"
+    }
+    disp()
+}
+  </script>
+  
+</html>
